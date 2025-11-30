@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Quarterly Earnings Report</title>
+
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reset.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/theme/sky.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/zenburn.min.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h2>Quarterly Earnings Report</h2>
+					<p>Q4 2025</p>
+					<p><small>Created by Aravindh</small></p>
+					<p><small>Contact: 24f3001403@ds.study.iitm.ac.in</small></p>
+				</section>
+
+				<section data-markdown>
+					<textarea data-template>
+						## Agenda
+						- Financial Highlights
+						- Key Performance Indicators (KPIs)
+						- Strategic Initiatives
+						- Q&A
+					</textarea>
+				</section>
+
+				<section>
+					<h3>Financial Highlights</h3>
+					<ul>
+						<li class="fragment">Revenue: $1.2B (up 15% YoY)</li>
+						<li class="fragment">Net Profit: $250M (up 20% YoY)</li>
+						<li class="fragment">EPS: $1.25 (up 18% YoY)</li>
+					</ul>
+					<aside class="notes">
+						Here we can see a strong performance in our key financial metrics. The year-over-year growth is impressive and demonstrates the success of our current strategy.
+					</aside>
+				</section>
+
+				<section>
+					<h3>Code Example: Calculating Loan Payments</h3>
+					<pre><code class="language-python" data-line-numbers="1-10|3-7|8">
+def calculate_monthly_payment(principal, annual_rate, years):
+    """Calculates the monthly payment for a loan."""
+    monthly_rate = annual_rate / 12 / 100
+    num_payments = years * 12
+    
+    payment = principal * (monthly_rate * (1 + monthly_rate)**num_payments) / ((1 + monthly_rate)**num_payments - 1)
+    
+    return payment
+
+# Example usage:
+loan_amount = 500000
+interest_rate = 5.0
+loan_term = 30
+
+print(f"Monthly Payment: ${calculate_monthly_payment(loan_amount, interest_rate, loan_term):.2f}")
+					</code></pre>
+					<aside class="notes">
+						This Python code demonstrates how we calculate monthly loan payments. It's a standard formula that we use across our retail banking products. Highlighting specific lines can help in explaining the code's logic.
+					</aside>
+				</section>
+
+				<section>
+					<h3>Financial Modeling: Black-Scholes</h3>
+					<p>
+						The Black-Scholes formula is used to model the price of European-style options.
+					</p>
+					<p>
+						\[ C(S, t) = N(d_1)S - N(d_2)Ke^{-r(T-t)} \]
+					</p>
+					<p>
+						<small>Where \(d_1 = \frac{\ln(\frac{S}{K}) + (r + \frac{\sigma^2}{2})(T-t)}{\sigma\sqrt{T-t}}\) and \(d_2 = d_1 - \sigma\sqrt{T-t}\)</small>
+					</p>
+					<aside class="notes">
+						This is the famous Black-Scholes model. We use it extensively in our derivatives pricing. It looks complex, but it's a cornerstone of modern financial theory.
+					</aside>
+				</section>
+
+				<section>
+					<h3>Questions?</h3>
+				</section>
+			</div>
+		</div>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/plugin/markdown/markdown.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/plugin/highlight/highlight.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/plugin/math/math.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/plugin/notes/notes.min.js"></script>
+		<script>
+			Reveal.initialize({
+				hash: true,
+				plugins: [ RevealMarkdown, RevealHighlight, RevealMath.KaTeX, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
